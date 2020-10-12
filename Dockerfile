@@ -10,7 +10,10 @@ RUN apk add --no-cache --virtual cancat-runtime-dependencies \
     python2 &&\
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub &&\
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.32-r0/glibc-2.32-r0.apk &&\
-    apk add glibc-2.32-r0.apk
+    apk add glibc-2.32-r0.apk &&\
+    echo "board_manager:" > /etc/arduino-cli.conf.yml &&\
+    echo "  additional_urls:" >> /etc/arduino-cli.conf.yml &&\
+    echo "    - https://macchina.cc/package_macchina_index.json"
 
 ENV FIRMWARE_DIR /opt/cancat/bin/sketches
 ENV PROGRAM_COMMAND "make due"
