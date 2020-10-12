@@ -13,7 +13,8 @@ RUN apk add --no-cache --virtual cancat-runtime-dependencies \
     apk add glibc-2.32-r0.apk &&\
     echo "board_manager:" > /etc/arduino-cli.conf.yml &&\
     echo "  additional_urls:" >> /etc/arduino-cli.conf.yml &&\
-    echo "    - https://macchina.cc/package_macchina_index.json" >> /etc/arduino-cli.conf.yml
+    echo "    - https://macchina.cc/package_macchina_index.json" >> /etc/arduino-cli.conf.yml &&\
+    arduino-cli lib install due_can
 
 ENV FIRMWARE_DIR /opt/cancat/bin/sketches
 ENV PROGRAM_COMMAND "make due"
