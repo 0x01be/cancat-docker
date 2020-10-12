@@ -24,10 +24,11 @@ ENV PATH ${PATH}:/opt/arduino/bin
 RUN arduino-cli lib install due_can
 RUN arduino-cli core install arduino:sam
 
-#RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
-#RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.32-r0/glibc-2.32-r0.apk
-#RUN apk add glibc-2.32-r0.apk
+RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.32-r0/glibc-2.32-r0.apk
+RUN apk add glibc-2.32-r0.apk
+RUN apk add make
 
-#WORKDIR /opt/cancat/bin/sketches
-#RUN make due
+WORKDIR /opt/cancat/bin/sketches
+RUN make due || echo "Never mind..."
 
