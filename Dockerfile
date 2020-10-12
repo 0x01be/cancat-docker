@@ -1,6 +1,7 @@
 FROM arm32v6/alpine
 
 RUN apk add --no-cache --virtual cancat-build-dependencies \
+    wget \
     git \
     build-base \
     python2-dev \
@@ -14,5 +15,9 @@ RUN pip install --prefix /opt/cancat/ \
     ipython \
     pyserial
 
-RUN python setup.py install --prefix=/opt/ancat/
+RUN python setup.py install --prefix=/opt/cancat/
+
+ADD https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh /opt/arduino/install.sh
+WORKDIR /opt/arduino
+RUN sh install.sh
 
