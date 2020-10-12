@@ -26,7 +26,7 @@ RUN arduino-cli lib install due_can
 RUN arduino-cli core install arduino:sam
 
 # https://raw.githubusercontent.com/Docker-Hub-frolvlad/docker-alpine-glibc/master/Dockerfile
-# The code below is copyright and used under the MIT license
+# The code below is copyrighted and used under the MIT license
 # Copyright (c) 2015 Vlad
 ENV LANG=C.UTF-8
 
