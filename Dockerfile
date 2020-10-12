@@ -12,5 +12,5 @@ ENV FIRMWARE_DIR /opt/cancat/bin/sketches
 ENV PROGRAM_COMMAND "make due"
 
 ENV PATH ${PATH}:/opt/cancat/bin/:/opt/arduino/bin/:/root/.arduino15/packages/arduino/tools/arm-none-eabi-gcc/4.8.3-2014q1/bin/
-ENV PYTHONPATH /opt/cancat/lib/python3.8/site-packages/
+ENV PYTHONPATH /opt/cancat/lib/python2.7/site-packages/:/opt/cancat/lib/python3.8/site-packages/
 
